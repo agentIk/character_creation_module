@@ -1,9 +1,9 @@
 from random import randint
 
 
-def attack(char_name, char_class):
-    char_points = None
-    points = None
+def attack(char_name: str, char_class: str) -> str:
+    char_points: int = None
+    points: int = None
     if char_class == 'warrior':
         char_points = 5
         points = char_points + randint(3, 5)
@@ -18,9 +18,9 @@ def attack(char_name, char_class):
         return (f'{char_name} нанёс урон противнику равный {points}')
 
 
-def defence(char_name, char_class):
-    char_points = None
-    points = None
+def defence(char_name: str, char_class: str) -> str:
+    char_points: int = None
+    points: int = None
     if char_class == 'warrior':
         char_points = 10
         points = char_points + randint(5, 10)
@@ -35,14 +35,14 @@ def defence(char_name, char_class):
         return (f'{char_name} блокировал {points} урона')
 
 
-def special(char_name, char_class):
-    char_points = None
-    points = None
+def special(char_name: str, char_class: str) -> str:
+    char_points: int = None
+    points: int = None
     if char_class == 'warrior':
         char_points = 80
         points = char_points + 25
         return (f'{char_name} применил специальное умение '
-                + f'«Выносливость {points}»')
+                f'«Выносливость {points}»')
     if char_class == 'mage':
         char_points = 5
         points = char_points + 40
@@ -53,7 +53,7 @@ def special(char_name, char_class):
         return (f'{char_name} применил специальное умение «Защита {points}»')
 
 
-def start_training(char_name, char_class):
+def start_training(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -78,7 +78,7 @@ def start_training(char_name, char_class):
     return 'Тренировка окончена.'
 
 
-def choice_char_class():
+def choice_char_class() -> str:
     approve_choice = None
     char_class = None
     while approve_choice != 'y':
@@ -102,7 +102,7 @@ def choice_char_class():
     return char_class
 
 
-def main():
+def main() -> None:
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name = input('...назови себя: ')
