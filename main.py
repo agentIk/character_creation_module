@@ -1,3 +1,4 @@
+"""Модуль создания персонажей и их навыков."""
 from random import randint
 
 # Новый импорт.
@@ -7,6 +8,16 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """
+    Применение атаки персонажем.
+
+    Аргументы:
+    char_name: str -- имя игрока
+    char_class: str -- название персонажа
+
+    Возвращаемое значение:
+    str -- информация о нанесеном уроне противнику персонажем.
+    """
     char_points: int = None
     points: int = None
     if char_class == 'warrior':
@@ -24,6 +35,16 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """
+    Применение защиты персонажем.
+
+    Аргументы:
+    char_name: str -- имя игрока
+    char_class: str -- название персонажа
+
+    Возвращаемое значение:
+    str -- информация, какую атаку отразил персонаж.
+    """
     char_points: int = None
     points: int = None
     if char_class == 'warrior':
@@ -41,6 +62,16 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """
+    Применение суперсилы персонажем.
+
+    Аргументы:
+    char_name: str -- имя игрока
+    char_class: str -- название персонажа
+
+    Возвращаемое значение:
+    str -- информация, какую суперсилу и в каком количестве применил персонаж.
+    """
     char_points: int = None
     points: int = None
     if char_class == 'warrior':
@@ -59,6 +90,16 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """
+    Начать тренировку персонажем.
+
+    Аргументы:
+    char_name: str -- имя игрока
+    char_class: str -- название персонажа
+
+    Возвращаемое значение:
+    str -- информация о ходе ведения тренировки персонажем
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -84,6 +125,12 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """
+    Выбор берсонажа.
+
+    Возвращаемое значение:
+    char_class: str -- название выбранного персонажа.
+    """
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
@@ -118,4 +165,4 @@ if __name__ == '__main__':
     print('Ты можешь выбрать один из трёх путей силы:')
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
-    print(start_training(char_name, char_class)) 
+    print(start_training(char_name, char_class))
